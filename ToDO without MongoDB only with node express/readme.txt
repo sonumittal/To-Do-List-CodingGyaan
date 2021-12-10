@@ -1,0 +1,1 @@
+just run command: npm i and node app.js

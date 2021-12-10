@@ -1,0 +1,30 @@
+<%- include("header") -%> <!--including header.ejs template here by ejs engine in app.js --->
+<div class="box1" id="heading">
+
+    <h1>Today</h1>
+</div>
+
+<div class="box">
+
+<% newListItems.forEach(function(item){ %>
+
+    <form action="/delete" method="post">
+        <div class="item">
+            <div class="round">
+                <input type="checkbox" id="checkbox" name="checkbox" value="<%= item._id %>" onchange="this.form.submit()">
+
+                <label for="checkbox"></label>
+            </div>
+            <p><%= item.name %></p>
+            <br>
+        </div>
+
+    </form>
+<% }) %>
+    <form class="item" action="/" method="post">
+        <!--data will go in post format-->
+        <input type="text" placeholder="new" name="user_name">
+        <hr>
+        <button id="b" type="submit" <span id="s2"></span>+</span></button>
+    </form>
+</div>
